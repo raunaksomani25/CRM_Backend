@@ -6,7 +6,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: "https://crm-backend-fsez.onrender.com/auth/google/callback",
     },
     function (accessToken, refreshToken, profile, done) {
       return done(null, profile);
@@ -21,3 +21,4 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((obj, done) => {
   done(null, obj);
 });
+
