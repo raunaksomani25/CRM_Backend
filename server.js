@@ -28,7 +28,7 @@ app.use(
   })
 );
 app.use(cors({
-  origin: "https://crm-frontend-eight-mocha.vercel.app", 
+  origin: "https://crm-frontend-zeta-umber.vercel.app/", 
   credentials: true               
 }));
 
@@ -50,4 +50,5 @@ app.use("/api/ai", require("./src/routes/ai"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
