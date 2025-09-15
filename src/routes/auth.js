@@ -13,9 +13,10 @@ router.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {
-    res.redirect(`${FRONTEND_URL}/landing`);
+    res.redirect(`https://crm-frontend-zeta-umber.vercel.app/landing`);
   }
 );
 
 
 module.exports = router;
+
