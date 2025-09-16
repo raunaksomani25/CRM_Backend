@@ -25,8 +25,14 @@ app.use(
     secret: process.env.JWT_SECRET,
     resave: false,
     saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === "production", 
+      httpOnly: true,
+      sameSite: "none", 
+    },
   })
 );
+
 app.use(cors({
   origin: "https://crm-frontend-theta-six.vercel.app", 
   credentials: true               
@@ -50,6 +56,7 @@ app.use("/api/ai", require("./src/routes/ai"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 
 
